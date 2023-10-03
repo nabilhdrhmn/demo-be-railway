@@ -17,7 +17,7 @@ router.post("/users", async (req, res) => {
 
 router.get("/users/:name", async (req, res) => {
   try {
-    const result = await User.sequelize.query('SELECT * FROM simple_database.users u WHERE u.name = ?',
+    const result = await User.sequelize.query('SELECT * FROM users u WHERE u.name = ?',
     {
       replacements: [req.params.name],
       type: QueryTypes.SELECT
